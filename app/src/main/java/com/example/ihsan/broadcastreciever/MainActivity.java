@@ -9,17 +9,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+
 public class MainActivity extends AppCompatActivity {
 
-    public AlarmManager alarmMgr;
-    public PendingIntent alarmIntent;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setAlarm();
+        startService(new Intent(this, MyService.class));
 
         Toast.makeText(this,"Main",Toast.LENGTH_SHORT).show();
     }
@@ -29,22 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Toast.makeText(this,"button",Toast.LENGTH_SHORT).show();
         stopService(new Intent(this, MyService.class));
-        closeAlarm();
+
     }
 
-    private void setAlarm(){
 
-
-        alarmMgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlarmReceiver.class);
-        alarmIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
-
-        alarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 1000 * 5 , alarmIntent);
-    }
-
-    public void closeAlarm(){
-
-        alarmMgr.cancel(alarmIntent);
-    }
 
 }

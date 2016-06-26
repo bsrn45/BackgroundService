@@ -15,8 +15,10 @@ public class AlarmReceiver extends BroadcastReceiver {
 
 
 
-        Toast.makeText(context,"alarm geldi",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context,"alarm geldi",Toast.LENGTH_SHORT).show();
 
 
     }
+
+
 }
