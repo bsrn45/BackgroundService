@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">BroadcastReciever</string>
+    <string name="app_name">DB Checker</string>
+    <string name="btnStop">Stop Service</string>
+
+
+
 </resources>

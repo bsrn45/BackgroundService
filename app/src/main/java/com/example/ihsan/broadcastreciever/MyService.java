@@ -44,7 +44,8 @@ public class MyService extends Service {
 
         //Toast.makeText(this,"Service Start",Toast.LENGTH_SHORT).show();
 
-        checkDB();
+        if(intent.getAction() == "alarm")
+            checkDB(this);
 
         return START_STICKY;
     }
@@ -60,10 +61,15 @@ public class MyService extends Service {
     public void onCreate() {
         super.onCreate();
         Toast.makeText(this,"Service and Alarm Created",Toast.LENGTH_SHORT).show();
+
         setAlarm();
 
-    }
 
+
+    }//End of onCreate
+
+
+//Alarm Setter
     private void setAlarm(){
 
 
@@ -74,14 +80,15 @@ public class MyService extends Service {
         alarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 1000 * 10 , alarmIntent);
     }
 
+//Alarm Closer
     public void closeAlarm(){
 
         alarmMgr.cancel(alarmIntent);
     }
 
-    //******************************************************************************************
 
-    public void checkDB(){
+//Check Database in everytime alarm called
+    public void checkDB(final Context context){
 
         Thread t = new Thread(){
 
@@ -122,50 +129,14 @@ public class MyService extends Service {
                                 JSONObject obj = finalResult.getJSONObject(i);
 
                                 if (obj.getInt("okundu") == 0) {
-                                    Toast.makeText(getApplicationContext(), "Yeni mesaj: "+ obj.getString("name"), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(context, "Yeni mesaj: "+ obj.getString("name"), Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }
 
-
-                        /*String rows = null;
-
-                        try {
-
-                            while ((rows = reader.readLine()) != null){
-
-                                sb.append(rows + "\n");
-                                //Toast.makeText(getApplicationContext(),reader.readLine(), Toast.LENGTH_SHORT).show();
-                            }
-
-                        }catch (IOException e){
-                            e.printStackTrace();
-                        }finally {
-                            try {
-                                in.close();
-                            }catch (IOException e){
-                                e.printStackTrace();
-
-                            }
-                        }
-
-                        html = sb.toString();
-
-                        JSONArray split = new JSONArray(html);
-                        if(split.length() > 0){
-
-                            for(int i=0; i<split.length(); i++) {
-
-                                JSONObject obj = split.getJSONObject(i);
-
-                                if (obj.getInt("okundu") == 0) {
-                                    Toast.makeText(getApplicationContext(), "Yeni mesaj: "+ obj.getString("name"), Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        }*/
 
                     }else //if response
-                        Toast.makeText(getApplicationContext(), "Cevap gelmedi", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Cevap gelmedi", Toast.LENGTH_SHORT).show();
 
 
                 }catch (Exception e){
@@ -177,5 +148,8 @@ public class MyService extends Service {
         };
 
         t.start();
-    }
+    }//End of checkDB()
+
+
+
 }
