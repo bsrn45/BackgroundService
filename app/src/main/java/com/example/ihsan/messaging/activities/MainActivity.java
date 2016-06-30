@@ -1,14 +1,12 @@
-package com.example.ihsan.broadcastreciever;
+package com.example.ihsan.messaging.activities;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
+import com.example.ihsan.messaging.R;
+import com.example.ihsan.messaging.db.MyService;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -29,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    }
+    }//End of onCreate()
 
 
     public void stopService(View view){
@@ -37,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         //Toast.makeText(this,"button",Toast.LENGTH_SHORT).show();
         stopService(new Intent(this, MyService.class));
 
-    }
+    }//End of stopButton onClick
 
 
 

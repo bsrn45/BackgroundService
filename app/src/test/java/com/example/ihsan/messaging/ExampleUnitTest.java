@@ -1,4 +1,4 @@
-package com.example.ihsan.broadcastreciever;
+package com.example.ihsan.messaging;
 
 import org.junit.Test;
 
