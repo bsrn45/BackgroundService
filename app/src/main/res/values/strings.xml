@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DB Checker</string>
+    <string name="app_name">Messaging</string>
     <string name="btnStop">Stop Service</string>
     <string name="sign_up_button">Sign Up</string>
 
