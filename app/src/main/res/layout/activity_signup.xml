@@ -7,10 +7,21 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Name"
+        android:ems="10"
+        android:id="@+id/et_name_s"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp"
+        android:layout_margin="10dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:hint="Email"
         android:ems="10"
-        android:id="@+id/et_email_l"
+        android:id="@+id/et_email_s"
         android:layout_gravity="center_horizontal"
         android:padding="10dp"
         android:layout_margin="10dp"
@@ -23,7 +34,7 @@
         android:inputType="textPassword"
         android:hint="Password"
         android:ems="10"
-        android:id="@+id/et_password_l"
+        android:id="@+id/et_password_s"
         android:layout_gravity="center_horizontal"
         android:padding="10dp"
         android:layout_margin="10dp" />
@@ -31,8 +42,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_login"
-        android:id="@+id/btn_Submit"
+        android:text="@string/sign_up_button"
+        android:id="@+id/btn_Register"
         android:layout_gravity="center_horizontal"
         android:layout_margin="10dp" />
 

@@ -2,6 +2,10 @@
     <string name="app_name">Messaging</string>
     <string name="btnStop">Stop Service</string>
     <string name="sign_up_button">Sign Up</string>
+    <string name="btn_login">Log In</string>
+    <string name="btn_toregister">Go To Registeration</string>
+    <string name="btn_tologin">Log In</string>
+    <string name="txt_or">or</string>
 
 
 </resources>
