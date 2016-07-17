@@ -40,4 +40,5 @@
         android:background="@color/material_deep_teal_200"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp" />
+
 </LinearLayout>

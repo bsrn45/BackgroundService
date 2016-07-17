@@ -139,7 +139,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         btn_first_tologin = (Button) findViewById(R.id.btn_tologin);
         btn_first_tologin.setOnClickListener((android.view.View.OnClickListener) this);
 
-        setTitle("Wellcome Messaging App");
+        setTitle("Welcome Messaging App");
     }//end of callfirstpage
 
     private void callMain() {
